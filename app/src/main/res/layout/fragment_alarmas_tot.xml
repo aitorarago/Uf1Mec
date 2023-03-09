@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/mainview">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/puigacastellar"/>
+    <LinearLayout
+        android:id="@+id/alarmaastitulo"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/black">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/light_red"
+            android:text="ALARMAS:"
+            android:textAlignment="center"
+            android:textSize="60sp"/>
+    </LinearLayout>
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/alarmaastitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/ciclesformtiustots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horari dels cicles formatius"
+            app:layout_constraintBottom_toTopOf="@+id/ciclesformtiusmati"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alarmaastitulo"
+            android:layout_marginTop="45dp"
+            android:backgroundTint="@color/light_blue"
+            />
+        <Button
+            android:id="@+id/ciclesformtiusmati"
+            app:layout_constraintTop_toBottomOf="@id/ciclesformtiustots"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ciclesformtiustarda"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Horari de cicles formatius als matins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:backgroundTint="@color/light_blue"
+
+            />
+
+        <Button
+            android:id="@+id/ciclesformtiustarda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horari de cicles formatius a les tardes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ciclesformtiusmati"
+            android:layout_marginTop="45dp"
+            android:backgroundTint="@color/light_blue"
+
+            />
+    </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        app:menu="@menu/bottom_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>

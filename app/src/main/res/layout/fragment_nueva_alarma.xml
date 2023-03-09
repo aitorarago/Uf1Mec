@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".NuevaAlarma">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/defhora"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottom_nav_view"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/closse"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:icon="@android:drawable/ic_delete"
+                android:layout_gravity="end"
+                android:contentDescription="TODO" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nueva Alarma: "
+                android:textSize="35sp"/>
+            <TimePicker
+                android:layout_marginTop="20dp"
+                android:id="@+id/timePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" />
+
+            <Button
+                android:layout_gravity="center"
+                android:id="@+id/guardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="60dp"
+                android:backgroundTint="@color/light_blue"
+                android:text="Guardar" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        app:menu="@menu/bottom_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>

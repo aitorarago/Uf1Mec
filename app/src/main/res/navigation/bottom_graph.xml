@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_graph">
+    <fragment
+        android:id="@+id/bottom1"
+        android:name="com.example.uf1projectofinal.AlarmaReciver"
+        android:label="fragment_bottom1"
+        tools:layout="@layout/fragment_alarm" >
+        <action
+            android:id="@+id/action_bottom1_to_bottom2"
+            app:destination="@id/bottom2" />
+        <action
+            android:id="@+id/action_bottom1_to_bottom3"
+            app:destination="@id/bottom3" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottom2"
+        android:name="com.example.uf1projectofinal.NuevaAlarma"
+        android:label="fragment_bottom2"
+        tools:layout="@layout/fragment_nueva_alarma" >
+        <action
+            android:id="@+id/action_bottom2_to_bottom3"
+            app:destination="@id/bottom3" />
+        <action
+            android:id="@+id/action_bottom2_to_bottom1"
+            app:destination="@id/bottom1" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottom3"
+        android:name="com.example.uf1projectofinal.AlarmasTot"
+        android:label="fragment_bottom3"
+        tools:layout="@layout/fragment_alarmas_tot" >
+        <action
+            android:id="@+id/action_bottom3_to_bottom1"
+            app:destination="@id/bottom1" />
+        <action
+            android:id="@+id/action_bottom3_to_bottom2"
+            app:destination="@id/bottom2" />
+    </fragment>
+</navigation>

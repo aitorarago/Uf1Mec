@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottom1Fragment"
+        android:icon="@android:drawable/ic_lock_idle_alarm"
+        android:title="Mis Alarmas"
+        android:iconTint="@color/black"
+        android:actionLayout="@layout/fragment_alarm"/>
+
+    <item
+        android:id="@+id/bottom2Fragment"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Añadir"
+        android:iconTint="@color/black"
+        android:actionLayout="@layout/fragment_nueva_alarma"/>
+
+
+    <item
+        android:id="@+id/bottom3Fragment"
+        android:icon="@android:drawable/stat_sys_download"
+        android:title="Actualizar"
+        android:iconTint="@color/black"
+        android:actionLayout="@layout/fragment_alarmas_tot"/>
+
+</menu>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/alarmasTot">
+
+
+    <fragment
+        android:id="@+id/alarmasTot"
+        android:name="com.example.uf1mec.AlarmasTot"
+        android:label="fragment_alarmas_tot"
+        tools:layout="@layout/fragment_alarmas_tot" />
+    <fragment
+        android:id="@+id/alarmaReciver"
+        android:name="com.example.uf1mec.AlarmaReciver"
+        android:label="fragment_alarma_reciver"
+        tools:layout="@layout/fragment_alarm" />
+    <fragment
+        android:id="@+id/nuevaAlarma"
+        android:name="com.example.uf1mec.NuevaAlarma"
+        android:label="fragment_nueva_alarma"
+        tools:layout="@layout/fragment_nueva_alarma" />
+
+</navigation>
