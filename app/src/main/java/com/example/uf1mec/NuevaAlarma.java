@@ -2,7 +2,6 @@ package com.example.uf1mec;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -30,7 +29,6 @@ public class NuevaAlarma extends Fragment {
     private TimePicker picker;
     Calendar calendar;
     PendingIntent pending_intent;
-    Intent intent;
     AlarmManager alarm_manager;
     NavController navController;
 
@@ -55,8 +53,6 @@ public class NuevaAlarma extends Fragment {
             public void onClick(View v) {
                 calendar.set(Calendar.HOUR_OF_DAY, picker.getHour());
                 calendar.set(Calendar.MINUTE, picker.getMinute());
-                pending_intent = PendingIntent.getBroadcast(NuevaAlarma.super.getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
                 alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
                 Log.d("msg119", ""+calendar.getTimeInMillis()+" "+pending_intent);
 

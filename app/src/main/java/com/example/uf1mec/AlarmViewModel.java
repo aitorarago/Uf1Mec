@@ -9,6 +9,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 
+import com.google.android.material.snackbar.Snackbar;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,10 +36,10 @@ public class AlarmViewModel extends AndroidViewModel {
                 alarmas.postValue(response.body());
                 alarmaReciver.setListTimers(alarmas);
             }
-
             @Override
             public void onFailure(@NonNull Call<Alarma.Respuesta> call, @NonNull Throwable t) {
-                alarmaReciver.sendError(view);
+                    Snackbar.make(view, "ERROR AL INTENTAR DESCARGAR LAS ALARMAS EN EL DISPOSITIVO",Snackbar.LENGTH_SHORT)
+                            .show();
             }
         });
     }

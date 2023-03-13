@@ -84,13 +84,13 @@ public class AlarmaReciver extends Fragment {
         });
         switch (busqueda){
             case 0:
-                alarmViewModel.buscar("ccff-diurn-i-tarda.json",view);
+                alarmViewModel.buscar("ccff-diurn-i-tarda",view);
                 break;
             case 1:
-                alarmViewModel.buscar("ccff-diurn.json",view);
+                alarmViewModel.buscar("ccff-diurn",view);
                 break;
             case 2:
-                alarmViewModel.buscar("ccff-tarda.json",view);
+                alarmViewModel.buscar("ccff-tarda",view);
                 break;
         }
 
@@ -99,11 +99,6 @@ public class AlarmaReciver extends Fragment {
     public void setBuscar(int i){
         busqueda=i;
 
-    }
-
-    public void sendError(View view) {
-        Snackbar.make(view, "ERROR AL INTENTAR DESCARGAR LAS ALARMAS EN EL DISPOSITIVO",Snackbar.LENGTH_SHORT)
-                .show();
     }
 
     static class ContenidoViewHolder extends RecyclerView.ViewHolder {
