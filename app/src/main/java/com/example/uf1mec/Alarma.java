@@ -6,7 +6,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public class Alarma {
     static class Respuesta {
@@ -29,9 +28,9 @@ public class Alarma {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(Api.class);
-    public interface Api {
-        @GET("/")
-        Call<Respuesta> buscar(@Query("extension") String extension);
 
+    public interface Api {
+        @GET("/{file}.json")
+        Call<Respuesta> getAlarms(@Path("file") String file);
     }
 }

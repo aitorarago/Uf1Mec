@@ -28,7 +28,7 @@ public class AlarmViewModel extends AndroidViewModel {
 
     public void buscar(String pos,View view){
         this.view=view;
-        Alarma.api.buscar(pos).enqueue(new Callback<Alarma.Respuesta>() {
+        Alarma.api.getAlarms(pos).enqueue(new Callback<Alarma.Respuesta>() {
             @Override
             public void onResponse(@NonNull Call<Alarma.Respuesta> call, @NonNull Response<Alarma.Respuesta> response) {
                 alarmas.postValue(response.body());
