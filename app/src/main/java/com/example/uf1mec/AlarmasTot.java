@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -38,31 +39,28 @@ public class AlarmasTot extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
         buttontots=view.findViewById(R.id.ciclesformtiustots);
-        AlarmaReciver alarmReceiver = new AlarmaReciver();
+        AlarmViewModel viewModel = new ViewModelProvider(requireActivity()).get(AlarmViewModel.class);
 
         buttontots.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                alarmReceiver.setBuscar(0);
+                viewModel.buscar("ccff-diurn-i-tarda",view.getRootView());
                 navController.navigate(R.id.alarmaReciver);
-
             }
         });
         buttonmati=view.findViewById(R.id.ciclesformtiusmati);
         buttonmati.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                alarmReceiver.setBuscar(1);
+                viewModel.buscar("ccff-diurn",view.getRootView());
                 navController.navigate(R.id.alarmaReciver);
-
             }
         });
         buttontarda=view.findViewById(R.id.ciclesformtiustarda);
         buttontarda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                alarmReceiver.setBuscar(2);
+                viewModel.buscar("ccff-tarda",view.getRootView());
                 navController.navigate(R.id.alarmaReciver);
             }
         });
